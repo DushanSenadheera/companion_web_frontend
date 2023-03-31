@@ -1,9 +1,12 @@
 import './App.css';
+import Signing from './components/Signing';
+import Dashboard from './components/Dashboard';
 
 export default function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      {/* <Signing/> */}
+      <Dashboard/>
     </div>
   );
 }
