@@ -10,6 +10,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { Link } from 'react-router-dom';
 
 export default function Signing() {
 
@@ -53,7 +54,9 @@ export default function Signing() {
                             />
                         </FormControl>
                         <br />
-                        <Button id='btn' size='small' fullWidth='true' variant="contained" >Sign In</Button>
+                        <Link to="/Dashboard">
+                            <Button id='btn' size='small' fullWidth='true' variant="contained" >Sign In</Button>
+                        </Link>
                     </form>
                     <small>Designed & Developed By Group 77</small>
                 </div>
