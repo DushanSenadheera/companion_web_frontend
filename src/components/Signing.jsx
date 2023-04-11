@@ -10,10 +10,22 @@ import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Axios from 'axios';
 
 export default function Signing() {
 
+    const navigate = useNavigate();
+
+        Axios.get('http://localhost:3001/read')
+            .then((response) => {
+                if(response.data[0]==null){
+                    // alert("Invalid Access")
+                }else{
+                    navigate("/Dashboard")
+                }
+            })
+   
     const [showPassword, setShowPassword] = React.useState(false);
     const handleClickShowPassword = () => setShowPassword((show) => !show);
 
