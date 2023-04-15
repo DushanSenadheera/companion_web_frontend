@@ -10,29 +10,37 @@ import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import Axios from 'axios';
 
 export default function Signing() {
 
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
+
     const navigate = useNavigate();
-
-        Axios.get('http://localhost:3001/read')
-            .then((response) => {
-                if(response.data[0]==null){
-                    // alert("Invalid Access")
-                }else{
-                    navigate("/Dashboard")
-                }
-            })
-   
-    const [showPassword, setShowPassword] = React.useState(false);
     const handleClickShowPassword = () => setShowPassword((show) => !show);
-
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
 
+    const checkAccess = (e) => {
+        e.preventDefault();
+        Axios.post('http://localhost:3001/checkAdminAccess', {
+             username,
+             password
+        }).then((response) => {
+            console.log(response.data);
+            if (response.data === "success") {
+                navigate("/dashboard")
+            } else {
+                alert("Invalid Access")
+            }
+        })
+    }
+    
     return (
         <div className='bg-img'>
             <div className='container'>
@@ -44,10 +52,18 @@ export default function Signing() {
                         <h1>Sign In</h1>
                         <small>to acces the Admin dashboard</small>
                     </div>
-                    <form>
-                        <TextField id="standard-basic" type='text' size='small' fullWidth='true' label="Username" variant="standard" />
+                    <form onSubmit={checkAccess} >
+                        <TextField id="standard-basic" type='text' size='small' fullWidth='true' label="Username" variant="standard" onChange={
+                            (e) => {
+                                setUsername(e.target.value);
+                            }
+                        } />
                         <br />
-                        <FormControl id="standard-basic" type='password' size='small' fullWidth='true' margin='normal' label="Username" variant="standard">
+                        <FormControl id="standard-basic" type='password' size='small' fullWidth='true' margin='normal' label="Username" variant="standard" onChange={
+                            (e) => {
+                                setPassword(e.target.value);
+                            }
+                        }>
                             <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
                             <Input
                                 id="standard-adornment-password"
@@ -66,9 +82,7 @@ export default function Signing() {
                             />
                         </FormControl>
                         <br />
-                        <Link to="/Dashboard">
-                            <Button id='btn' size='small' fullWidth='true' variant="contained" >Sign In</Button>
-                        </Link>
+                        <Button type='submit' id='btn' size='small' fullWidth='true' variant="contained" >Sign In</Button>
                     </form>
                     <small>Designed & Developed By Group 77</small>
                 </div>
