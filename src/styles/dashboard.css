@@ -45,3 +45,15 @@ ul{
     flex-direction: column;
 }
 
+.icon{
+    margin-right: 0.5rem;
+    font-size: large;
+}
+
+#search{
+    border: none;
+    outline: none;
+    padding: 6px;
+    width: 40%;
+    border-radius: 4px;
+}
