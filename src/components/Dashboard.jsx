@@ -15,6 +15,12 @@ import IconButton from '@mui/material/IconButton';
 import { Link, Outlet } from 'react-router-dom';
 
 export default function Dashboard() {
+
+const adminSession = sessionStorage.getItem('adminAccess');
+if (adminSession === null) {
+    window.location.href = "/";
+}
+
     return (
         <div id='content' >
             <div className="nav-links">
@@ -27,7 +33,7 @@ export default function Dashboard() {
                     <li><ReportOutlinedIcon className='icon' /> <Link to="/dashboard/report">Reports</Link></li>
                     <li><SettingsOutlinedIcon className='icon' /> <Link to="/dashboard/settings">Settings</Link></li>
                     <br />
-                    <li><LogoutIcon className='icon' /> <Link to="/">Logout</Link></li>
+                    <li onClick={()=>{sessionStorage.removeItem('adminAccess')}} ><LogoutIcon className='icon' /> <Link to="/">Logout</Link></li>
                 </ul>
             </div>
             <div className="content">

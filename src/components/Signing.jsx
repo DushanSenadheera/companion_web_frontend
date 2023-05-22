@@ -34,6 +34,7 @@ export default function Signing() {
         }).then((response) => {
             console.log(response.data);
             if (response.data === "success") {
+                sessionStorage.setItem('adminAccess', 'success');
                 navigate("/dashboard")
             } else {
                 alert("Invalid Access")
