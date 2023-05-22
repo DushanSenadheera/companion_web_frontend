@@ -31,7 +31,7 @@ export default function Message() {
                     <Stack direction="row" alignItems='center' spacing={2}><Avatar>JD</Avatar><span>Jhon Doe</span></Stack>
                     </Typography>
                     <Typography sx={{ color: 'text.primary' }}>
-                        Hi, Can I know the process of verification for fund raising?
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi ex unde vitae illo sequi dolore illum, quod dicta.
                     </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
@@ -54,7 +54,7 @@ export default function Message() {
                     <Stack direction="row" alignItems='center' spacing={2}><Avatar>JD</Avatar><span>Jhon Doe</span></Stack>
                     </Typography>
                     <Typography sx={{ color: 'text.primary' }}>
-                        Hi, Can I know the process of verification for fund raising?
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam necessitatibus rerum nemo ducimus cupiditate quo, a perferendis at expedita exercitationem totam alias officiis sint ratione.
                     </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
