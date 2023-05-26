@@ -24,7 +24,7 @@ export default function Settings() {
         <div className='pswChangeSection'>
             <h3>Settings</h3>
             <div className="pswChange">
-                <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined" size='small'>
+                <FormControl sx={{ m: 1, width: '60ch' }} variant="outlined" size='small'>
                     <InputLabel htmlFor="outlined-adornment-password">Old Password</InputLabel>
                     <OutlinedInput
                         id="outlined-adornment-password"
@@ -45,7 +45,7 @@ export default function Settings() {
                     />
                 </FormControl>
                 <br />
-                <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined" size='small'>
+                <FormControl sx={{ m: 1, width: '60ch' }} variant="outlined" size='small'>
                     <InputLabel htmlFor="outlined-adornment-password">New Password</InputLabel>
                     <OutlinedInput
                         id="outlined-adornment-password"
@@ -66,7 +66,7 @@ export default function Settings() {
                     />
                 </FormControl>
                 <br />
-                <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined" size='small'>
+                <FormControl sx={{ m: 1, width: '60ch' }} variant="outlined" size='small'>
                     <InputLabel htmlFor="outlined-adornment-password">Confirm Password</InputLabel>
                     <OutlinedInput
                         id="outlined-adornment-password"
@@ -90,6 +90,7 @@ export default function Settings() {
                 <Button sx={
                     {
                         backgroundColor: 'var(--primary-color)',
+                        width: '60ch',
                     }
                 } size='small' variant="contained">Submit</Button>
             </div>

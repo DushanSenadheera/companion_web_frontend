@@ -13,6 +13,13 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Fade from '@mui/material/Fade';
 import '../styles/verification.css';
+import file from '../assets/Arunalu fund raising event.pdf';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
 
 export default function Verification() {
 
@@ -24,6 +31,20 @@ export default function Verification() {
     const handleClose = () => {
         setAnchorEl(null);
     };
+    
+    const [snackopen, setOpen] = React.useState(false);
+  
+    const snackhandleClick = () => {
+      setOpen(true);
+    };
+  
+    const snackhandleClose = (event, reason) => {
+      if (reason === 'clickaway') {
+        return;
+      }
+  
+      setOpen(false);
+    }
 
     return (
         <div className='verifysection'>
@@ -55,9 +76,9 @@ export default function Verification() {
                                     onClose={handleClose}
                                     TransitionComponent={Fade}
                                 >
-                                    <MenuItem onClick={handleClose}>Download</MenuItem>
+                                    <MenuItem><a target='blank' href={file}>Download</a></MenuItem>
                                     <MenuItem onClick={handleClose}>Reject</MenuItem>
-                                    <MenuItem onClick={handleClose}>Accept</MenuItem>
+                                    <MenuItem onClick={snackhandleClick}>Accept</MenuItem>
                                 </Menu>
                             </IconButton>
                         }
@@ -71,11 +92,25 @@ export default function Verification() {
                     />
                     <CardContent>
                         <Typography variant="body2" color="text.secondary">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, officiis. Debitis aperiam nesciunt velit excepturi impedit ex laudantium soluta, et suscipit, voluptates architecto maxime voluptas neque modi commodi quasi asperiores!
+                        Sansadaya Medical Fundraising Event: 
+
+We invite you to join us for a heartfelt evening of compassion and support at our Medical Fundraising Event. Together, we can make a difference in the lives of individuals facing medical challenges and provide them with the care and assistance they need. Save the date and be part of this impactful event.
+
+Date: 2023.05.20
+Time: 9.00
+Location: cancer hospital maharagama
+
+Description:
+The  Medical Fundraising Event is dedicated to raising funds to support individuals and families in need of medical assistance. By attending this event, you'll be playing a crucial role in helping us provide vital medical resources, treatments, and support to those facing health challenges.
                         </Typography>
                     </CardContent>
                 </Card>
             </div>
+            <Snackbar open={snackopen} autoHideDuration={6000} onClose={snackhandleClose}>
+        <Alert onClose={snackhandleClose} severity="success" sx={{ width: '100%' }}>
+          Fundraise event accepted successfully!
+        </Alert>
+      </Snackbar>
         </div>
     )
 }
