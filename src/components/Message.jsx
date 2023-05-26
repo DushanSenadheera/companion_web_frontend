@@ -31,7 +31,7 @@ export default function Message() {
                     <Stack direction="row" alignItems='center' spacing={2}><Avatar>JD</Avatar><span>Jhon Doe</span></Stack>
                     </Typography>
                     <Typography sx={{ color: 'text.primary' }}>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi ex unde vitae illo sequi dolore illum, quod dicta.
+                    Hi, can I know the details related to the fund raising verification process?
                     </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
@@ -41,30 +41,6 @@ export default function Message() {
                         multiline
                         maxRows={4}
                         fullWidth={true}
-                    />
-                </AccordionDetails>
-            </Accordion>
-          <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-                <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel3bh-content"
-                    id="panel3bh-header"
-                >
-                    <Typography sx={{ width: '33%', flexShrink: 0 }}>
-                    <Stack direction="row" alignItems='center' spacing={2}><Avatar>JD</Avatar><span>Jhon Doe</span></Stack>
-                    </Typography>
-                    <Typography sx={{ color: 'text.primary' }}>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam necessitatibus rerum nemo ducimus cupiditate quo, a perferendis at expedita exercitationem totam alias officiis sint ratione.
-                    </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                    <TextField
-                        id="outlined-multiline-flexible"
-                        label="Message"
-                        multiline
-                        maxRows={4}
-                        fullWidth={true}
-                        
                     />
                 </AccordionDetails>
             </Accordion>

@@ -27,15 +27,15 @@ export default function Report(){
                     id="panel3bh-header"
                 >
                     <Typography sx={{ width: '33%', flexShrink: 0 }}>
-                    <Stack direction="row" alignItems='center' spacing={2}><Avatar>JD</Avatar><span>Jhon Doe</span></Stack>
+                    <Stack direction="row" alignItems='center' spacing={2}><Avatar>AG</Avatar><span>Amith Gamagedara</span></Stack>
                     </Typography>
                     <Typography sx={{ color: 'text.primary' }}>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        Regarding post content
                     </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                 <Typography sx={{ color: 'text.primary' }}>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed quam nobis odio delectus neque. Repudiandae eaque fugiat cumque necessitatibus voluptatem.
+                I am writing to provide a report on a recent social media post that features content from another source. The purpose of this report is to acknowledge the content's origin, summarize its performance and engagement, and offer insights for future content curation and collaboration.
                     </Typography>
                 </AccordionDetails>
             </Accordion>
