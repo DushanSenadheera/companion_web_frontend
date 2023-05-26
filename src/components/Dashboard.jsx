@@ -16,10 +16,10 @@ import { Link, Outlet } from 'react-router-dom';
 
 export default function Dashboard() {
 
-// const adminSession = sessionStorage.getItem('adminAccess');
-// if (adminSession === null) {
-//     window.location.href = "/";
-// }
+const adminSession = sessionStorage.getItem('adminAccess');
+if (adminSession === null) {
+    window.location.href = "/";
+}
 
     return (
         <div id='content' >
